@@ -9,7 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Home()
+        ZStack{
+            TabView{
+                Home().tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+                
+                Home().tabItem {
+                    Image(systemName: "paperplane.fill")
+                    Text("Explore")
+                }
+                
+                Home().tabItem {
+                    Image(systemName: "tray.fill")
+                    Text("Subscription")
+                }
+                
+                Home().tabItem {
+                    Image(systemName: "envelope.fill")
+                    Text("Inbox")
+                }
+                
+                Home().tabItem {
+                    Image(systemName: "play.rectangle.fill")
+                    Text("Collection")
+                }
+            }.accentColor(.red)
+        }
+        
     }
 }
 
@@ -58,7 +86,6 @@ struct Home : View {
             )
                 .navigationBarTitle("", displayMode: .inline)
         }
-        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
     }
 }
 
