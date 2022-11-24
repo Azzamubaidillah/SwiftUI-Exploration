@@ -92,66 +92,41 @@ struct Home : View {
 struct Main : View {
     var body: some View{
         List {
-            VStack() {
-                ZStack (alignment: .bottomTrailing){
-                    Image("content").resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("10:00").padding(.all, 5).foregroundColor(.white).font(.caption).background(Color.black).cornerRadius(5).padding(.trailing, 5).padding(.bottom, 5)
-                }
-            }
-            HStack{
-                Image("avatar").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            CellContent(image: "content", author: "Codewithchris", views: "391", title: "Swift Programming Structures", duration: "11:19")
+            CellContent(image: "content1", author: "Azzam Ubaidillah", views: "999", title: "Build Your First SWIFTUI Apps", duration: "21:39")
+            CellContent(image: "content2", author: "Ipung Dev", views: "599", title: "Data Flow in Swift", duration: "9:28")
+        }
+    }
+}
+
+
+struct CellContent : View {
+    
+    var image: String
+    var author: String
+    var views: String
+    var title: String
+    var duration: String
+    
+    var body : some View {
+        VStack() {
+            ZStack (alignment: .bottomTrailing){
+                Image(image).resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                 
-                VStack (alignment: .leading){
-                    Text("Swift Programming Structures").font(.headline)
-                    HStack{
-                        Text("Code with Chris - 57K views - 1 day ago").font(.caption)
-                    }
-                }
-                Spacer()
-                Image(systemName: "list.bullet")
+                Text(duration).padding(.all, 5).foregroundColor(.white).font(.caption).background(Color.black).cornerRadius(5).padding(.trailing, 5).padding(.bottom, 5)
             }
+        }
+        HStack{
+            Image("avatar").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
-            
-            VStack {
-                ZStack (alignment: .bottomTrailing){
-                    Image("content1").resizable().aspectRatio(contentMode: .fill)
-                    
-                    Text("10:00").padding(.all, 5).foregroundColor(.white).font(.caption).background(Color.black).cornerRadius(5).padding(.trailing, 5).padding(.bottom, 5)
+            VStack (alignment: .leading){
+                Text(title).font(.headline)
+                HStack{
+                    Text("\(author) - \(views) views - 1 day ago").font(.caption)
                 }
             }
-            HStack{
-                Image("avatar").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                
-                VStack (alignment: .leading){
-                    Text("BUILD FIRST SWIFTUI APP").font(.headline)
-                    HStack{
-                        Text("Code with Chris - 57K views - 1 day ago").font(.caption)
-                    }
-                }
-                Spacer()
-                Image(systemName: "list.bullet")
-            }
-            
-            VStack {
-                ZStack (alignment: .bottomTrailing){
-                    Image("content2").resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    
-                    Text("10:00").padding(.all, 5).foregroundColor(.white).font(.caption).background(Color.black).cornerRadius(5).padding(.trailing, 5).padding(.bottom, 5)
-                }
-            }
-            HStack{
-                Image("avatar").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                
-                VStack (alignment: .leading){
-                    Text("Data Flow in SwiftUI").font(.headline)
-                    HStack{
-                        Text("Code with Chris - 57K views - 1 day ago").font(.caption)
-                    }
-                }
-                Spacer()
-                Image(systemName: "list.bullet")
-            }
+            Spacer()
+            Image(systemName: "list.bullet")
         }
     }
 }
