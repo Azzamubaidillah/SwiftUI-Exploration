@@ -38,13 +38,15 @@ struct ContentView: View {
     ProductModel(id: 6, name: "Tesla Model S", image: "model-s", price:"820 M", location: "Tesla Singapore"),
     ]
     
+    @State var countCart:Int = 0
+    
     var body: some View {
         
         NavigationView{
             ScrollView{
                 ForEach(data){
                     row in VStack(spacing: 10){
-                        Product(data: row).padding()
+                        Product(data: row, count: $countCart).padding()
                     }
                 }
             }
@@ -56,12 +58,8 @@ struct ContentView: View {
                     Image(systemName: "person.fill")
                     }
                     
-                    ZStack{
-                        Button(action: {}){
-                        Image(systemName: "cart.fill")
-                        }
-                        Text("0").foregroundColor(.white).frame(width: 10, height: 10).font(.body).padding(5).background(Color.red).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).offset(x: 10, y: -10)
-                    }
+                    Cart(count: $countCart)
+                    
                 }
             )
         }
@@ -75,9 +73,23 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct Cart : View {
+    @Binding var count:Int
+    
+    var body: some View{
+        ZStack{
+            Button(action: {}){
+            Image(systemName: "cart.fill")
+            }
+            Text("\(count)").foregroundColor(.white).frame(width: 10, height: 10).font(.body).padding(5).background(Color.red).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).offset(x: 10, y: -10)
+        }
+    }
+}
+
 struct Product : View {
     
     let data: ProductModel
+    @Binding var count: Int
     
     var body: some View{
         
@@ -97,18 +109,30 @@ struct Product : View {
                 Image(systemName: "mappin.circle")
                 Text(self.data.location)}.padding(.leading).padding(.trailing).font(.caption)
             
-            Button(
-                action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            addCart(count: $count)
+            
+    }.background(Color("light-gray")).cornerRadius(15).padding()
+}
+
+struct addCart : View {
+    
+    @Binding var count: Int
+    
+    var body: some View{
+        Button(
+            action: {
+                self.count += 1
+            }, label: {
+                HStack{
+                    Spacer()
                     HStack{
-                        Spacer()
-                        HStack{
-                            Image(systemName: "cart")
-                            Text("Add to Cart").font(.callout).padding()
-                        }
-                        Spacer()
-                    }.background(Color.green).foregroundColor(.white).cornerRadius(10).padding(.top, 20)
+                        Image(systemName: "cart")
+                        Text("Add to Cart").font(.callout).padding()
+                    }
+                    Spacer()
+                }.background(Color.green).foregroundColor(.white).cornerRadius(10).padding(.top, 20)
                 }
             )
-        }.background(Color("light-gray")).cornerRadius(15).padding()
+        }
     }
 }
