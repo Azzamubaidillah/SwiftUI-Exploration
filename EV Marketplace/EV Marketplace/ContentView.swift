@@ -47,10 +47,27 @@ struct ContentView: View {
                         Product(data: row).padding()
                     }
                 }
-            }.navigationTitle("Electronic Vehicle")
+            }
+            .navigationTitle("Electronic Vehicle")
+            .navigationBarItems(
+                trailing:
+                HStack(spacing: 20){
+                    Button(action: {}){
+                    Image(systemName: "person.fill")
+                    }
+                    
+                    ZStack{
+                        Button(action: {}){
+                        Image(systemName: "cart.fill")
+                        }
+                        Text("0").foregroundColor(.white).frame(width: 10, height: 10).font(.body).padding(5).background(Color.red).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).offset(x: 10, y: -10)
+                    }
+                }
+            )
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
