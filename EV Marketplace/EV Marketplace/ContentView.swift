@@ -7,26 +7,6 @@
 
 import SwiftUI
 
-//model
-
-struct ProductModel : Identifiable {
-    let id: Int
-    let name: String
-    let image: String
-    let price : String
-    let location : String
-    
-    init(id: Int, name: String, image: String, price: String, location: String) {
-        
-        self.id = id
-        self.name = name
-        self.image = image
-        self.price = price
-        self.location = location
-        
-    }
-}
-
 struct ContentView: View {
     
     let data : [ProductModel] = [
