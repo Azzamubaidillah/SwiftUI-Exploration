@@ -13,6 +13,7 @@
 		87200DBD29327500002DE4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87200DBC29327500002DE4FC /* Assets.xcassets */; };
 		87200DC029327500002DE4FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87200DBF29327500002DE4FC /* Preview Assets.xcassets */; };
 		87200DC329327500002DE4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87200DC129327500002DE4FC /* LaunchScreen.storyboard */; };
+		87200DCC2932752F002DE4FC /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87200DCB2932752E002DE4FC /* AuthUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		87200DBF29327500002DE4FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87200DC229327500002DE4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87200DC429327500002DE4FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87200DCB2932752E002DE4FC /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				87200DC129327500002DE4FC /* LaunchScreen.storyboard */,
 				87200DC429327500002DE4FC /* Info.plist */,
 				87200DBE29327500002DE4FC /* Preview Content */,
+				87200DCB2932752E002DE4FC /* AuthUser.swift */,
 			);
 			path = "Swift Login";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				87200DB7293274FE002DE4FC /* AppDelegate.swift in Sources */,
 				87200DB9293274FE002DE4FC /* SceneDelegate.swift in Sources */,
+				87200DCC2932752F002DE4FC /* AuthUser.swift in Sources */,
 				87200DBB293274FE002DE4FC /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
