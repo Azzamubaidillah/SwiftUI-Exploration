@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var userAuth : AuthUser
     var body: some View {
-        Login( )
+        if (!userAuth.isLoggedIn) {
+            AnyView(Login())
+        } else if (userAuth.isLoggedIn) {
+            AnyView(Home())
+        }
     }
 }
 
@@ -19,12 +25,35 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct Home : View{
+    
+    @EnvironmentObject var userAuth : AuthUser
+    
+    var body: some View {
+        Text("Welcome Home Sweetheart")
+        Button(action:{self.userAuth.isLoggedIn = false}){
+            Text("Logout")
+        }
+    }
+}
+
 struct Login : View {
+    
+    @EnvironmentObject var userAuth : AuthUser
     
     @State var username : String = ""
     @State var password : String = ""
     
     let lightGreyColor = Color(red: 239.0/255.0, green:243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+    
+    func loginCheck(){
+        if (username == "Admin" && password == "123") {
+            userAuth.isLoggedIn = true
+        } else {
+            userAuth.isLoggedIn = false
+            userAuth.isCorrect = false
+        }
+    }
     
     var body: some View{
         ZStack {
@@ -50,6 +79,10 @@ struct Login : View {
                     Text("Password")
                     SecureField("Password...",  text: $password).padding().background(lightGreyColor).cornerRadius(5.0)
                     
+                    if(!userAuth.isCorrect){
+                    	    Text("username dan password salah").foregroundColor(.red)
+                    }
+                    
                     HStack {
                         Button(action:{}){
                             Text("Forgot Password?")
@@ -59,7 +92,9 @@ struct Login : View {
                     
                     HStack{
                         Spacer()
-                        Button(action:{}){
+                        Button(action:{
+                            loginCheck()
+                        }){
                             Text("Sign In").font(.callout).bold().foregroundColor(.white)
                         }
                         Spacer()
