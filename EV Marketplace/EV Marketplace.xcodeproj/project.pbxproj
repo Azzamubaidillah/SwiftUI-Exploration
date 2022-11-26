@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87200D84293267C7002DE4FC /* productModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87200D83293267C7002DE4FC /* productModel.swift */; };
+		87200D88293269AE002DE4FC /* GlobalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87200D87293269AE002DE4FC /* GlobalObject.swift */; };
 		872D3655292FDC13000BCB66 /* EV_MarketplaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D3654292FDC13000BCB66 /* EV_MarketplaceApp.swift */; };
 		872D3657292FDC13000BCB66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D3656292FDC13000BCB66 /* ContentView.swift */; };
 		872D3659292FDC18000BCB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872D3658292FDC18000BCB66 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		87200D83293267C7002DE4FC /* productModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productModel.swift; sourceTree = "<group>"; };
+		87200D87293269AE002DE4FC /* GlobalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalObject.swift; sourceTree = "<group>"; };
 		872D3651292FDC13000BCB66 /* EV Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EV Marketplace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		872D3654292FDC13000BCB66 /* EV_MarketplaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EV_MarketplaceApp.swift; sourceTree = "<group>"; };
 		872D3656292FDC13000BCB66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				872D365D292FDC18000BCB66 /* Info.plist */,
 				872D365A292FDC18000BCB66 /* Preview Content */,
 				87200D83293267C7002DE4FC /* productModel.swift */,
+				87200D87293269AE002DE4FC /* GlobalObject.swift */,
 			);
 			path = "EV Marketplace";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				872D3657292FDC13000BCB66 /* ContentView.swift in Sources */,
+				87200D88293269AE002DE4FC /* GlobalObject.swift in Sources */,
 				87200D84293267C7002DE4FC /* productModel.swift in Sources */,
 				872D3655292FDC13000BCB66 /* EV_MarketplaceApp.swift in Sources */,
 			);
