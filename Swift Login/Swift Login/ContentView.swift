@@ -37,7 +37,7 @@ struct Login : View {
                         Image("bitmap").resizable().frame(width: 120, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
                     }
                     Spacer()
-                }.frame(height: 100).padding(50).background(Color.purple).edgesIgnoringSafeArea(.top)
+                }.frame(height: 100).padding(50).background(Color.purple).clipShape(CustomShape(corner: [.bottomLeft, .bottomRight], radi: 30)).edgesIgnoringSafeArea(.top)
                 
                 VStack{
                     Text("Welcome back!").bold().font(.largeTitle).foregroundColor(Color.purple)
@@ -86,5 +86,16 @@ struct Login : View {
                 Spacer()
             }
         }
+    }
+}
+
+struct CustomShape : Shape {
+    var corner : UIRectCorner
+    var radi : CGFloat
+    	
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: radi, height: radi)
+        )
+        return Path(path.cgPath)
     }
 }
